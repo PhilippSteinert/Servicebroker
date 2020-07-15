@@ -65,7 +65,7 @@ From within the `backend` directory first ensure you are working using your crea
 
 To run the server, execute:
 
-```bash
+```
 set FLASK_APP=flaskr
 set FLASK_ENV=development
 flask run
@@ -95,7 +95,7 @@ The API will return various error types when requests fail:
 Endpoints cover 
 
 #### `GET localhost:5000/servicerequests`
-- *Retrieves* servicerequests
+- Retrieves servicerequests
 - Returns success value, total servicerequests and list of servicerequests
 - Results are paginated (every 5 servicerequests)
 
@@ -143,7 +143,7 @@ Response:
 ```
 
 #### `GET localhost:5000/hospitals`
-- *Retrieves* hospitals
+- Retrieves hospitals
 - Returns success value, total hospitals and list of hospital names
 
 Header:
@@ -170,7 +170,7 @@ Response:
 ```
 
 #### `POST localhost:5000/servicerequests`
-- *Creates* a new servicerequest
+- Creates a new servicerequest
 - Returns success value, total servicerequests and ID of newly created servicerequest
 
 Header:
@@ -222,7 +222,7 @@ Response:
 
 #### `DELETE localhost:5000/servicerequests/<int:id>`
 
-- *Deletes* servicerequest
+- Deletes servicerequest
 - Returns success value, deleted servicerequest ID and number of servicerequests
 
 Header:
