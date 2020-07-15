@@ -2,6 +2,7 @@
 
 ## Motivation
 The servicebroker manages *servicerequests*. The current application allows creating, retrieving, updating and deleting *servicerequests*. The final version will be able to handle various *servicerequests* (e.g. transportation, surveillance or inspection). The current application is build around a single application: To handle organ transportation from donor clinic to transplant center.
+Hosted on heroku. `https://git.heroku.com/servicebroker.git`
 
 ## Getting Started
 - Base URL: At present this app can only be run locally and is not hosted as a base URL. The backend app is hosted at the default, `http://127.0.0.1:5000/`, which is set as a proxy in the frontend configuration. 
@@ -93,17 +94,17 @@ The API will return various error types when requests fail:
 ### Endpoints 
 Endpoints cover 
 
-#### GET localhost:5000/servicerequests
+#### `GET localhost:5000/servicerequests`
 - *Retrieves* servicerequests
 - Returns success value, total servicerequests and list of servicerequests
 - Results are paginated (every 5 servicerequests)
 
-**Header:**
+Header:
 | Key             | Value                 | Description                     | Required / Optional         |
 |:----------------|:----------------------|:--------------------------------|:----------------------------|
 | Authorization   | Bearer &lt;token&gt;  | Requires JWT bearer token       | Required                    |
 
-**Response:**
+Response:
 ``` 
 {
   "servicerequests": [
@@ -141,16 +142,16 @@ Endpoints cover
 }
 ```
 
-#### GET localhost:5000/hospitals
+#### `GET localhost:5000/hospitals`
 - *Retrieves* hospitals
 - Returns success value, total hospitals and list of hospital names
 
-**Header:**
+Header:
 | Key             | Value                 | Description                     | Required / Optional         |
 |:----------------|:----------------------|:--------------------------------|:----------------------------|
 | Authorization   | Bearer &lt;token&gt;  | Requires JWT bearer token       | Required                    |
 
-**Response:**
+Response:
 ``` 
 {
   "hospitals": [
@@ -168,11 +169,11 @@ Endpoints cover
 }
 ```
 
-#### POST localhost:5000/servicerequests
+#### `POST localhost:5000/servicerequests`
 - *Creates* a new servicerequest
 - Returns success value, total servicerequests and ID of newly created servicerequest
 
-**Header:**
+Header:
 | Key             | Value                 | Description                     | Required / Optional         |
 |:----------------|:----------------------|:--------------------------------|:----------------------------|
 | Content-Type    | application/json      | Payload is in JSON format       | Required                    |
@@ -191,7 +192,7 @@ Endpoints cover
     "latest_delivery_datetime": "2020-05-28 13:30:00"
 }
 ```
-**Response:**
+Response:
 ```
 {
   "created": 4,
@@ -200,17 +201,17 @@ Endpoints cover
 }
 ```
 
-#### PATCH localhost:5000/servicerequests/{id}
+#### `PATCH localhost:5000/servicerequests/<int:id>`
 - *Updates* servicerequest status
 - Returns success value, new servicerequest status and servicerequest ID
 
-**Header:**
+Header:
 | Key             | Value                 | Description                     | Required / Optional         |
 |:----------------|:----------------------|:--------------------------------|:----------------------------|
 | Content-Type    | application/json      | Payload is in JSON format       | Required                    |
 | Authorization   | Bearer &lt;token&gt;  | Requires JWT bearer token       | Required                    |
 
-**Response:**
+Response:
 ``` 
 {
   "status": "Scheduled",
@@ -219,17 +220,17 @@ Endpoints cover
 }
 ```
 
-#### DELETE localhost:5000/servicerequests/{id}
+#### `DELETE localhost:5000/servicerequests/<int:id>`
 
 - *Deletes* servicerequest
 - Returns success value, deleted servicerequest ID and number of servicerequests
 
-**Header:**
+Header:
 | Key             | Value                 | Description                     | Required / Optional         |
 |:----------------|:----------------------|:--------------------------------|:----------------------------|
 | Authorization   | Bearer &lt;token&gt;  | Requires JWT bearer token       | Required                    |
 
-**Response:**
+Response:
 ```
 {
   "deleted_servicerequest_id": 1,
